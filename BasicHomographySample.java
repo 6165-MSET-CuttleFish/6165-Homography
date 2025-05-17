@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.opencv.core.Point;
 
 
-@TeleOp(name = "BasicHomographySample", group="Linear OpMode")
+@TeleOp(name = "Concept: AprilTag", group="Linear OpMode")
 public class BasicHomographySample extends LinearOpMode{
 
     // Offset constants, inches
@@ -49,6 +49,7 @@ public class BasicHomographySample extends LinearOpMode{
                 }
 
                 telemetry.addData("Results", output.toString());
+                telemetry.update();
             }
         }
     }
@@ -89,9 +90,9 @@ public class BasicHomographySample extends LinearOpMode{
      * @return Robot-relative coordinates of the detected object
      */
     private Point calculateRobotCoordinates(LLResultTypes.DetectorResult result) {
-        // Get pixel
-        double x = result.getTargetXDegrees();
-        double y = result.getTargetYDegrees();
+        // Get pixel of result
+        double x = result.getTargetXPixels();
+        double y = result.getTargetYPixels();
 
         // Apply homography transformation
         double X_prime = H[0][0] * x + H[0][1] * y + H[0][2];

@@ -7,7 +7,7 @@ In our case, we want to take an image from our camera and warp it onto the plane
 
 More info on how homography works here: https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
 
-## Our process:
+## Our process
 There are really only two main steps:
 1. Calculate the homography matrix.
 2. Apply the matrix in real-time to calculate locations of objects.
@@ -24,14 +24,14 @@ If you cannot attain a chessboard with 1 in × 1 in tiles, you will just have to
 3. Download `homographyCalibration.py`, `homographyTest.py`, and `referenceChessboard.png` and put them in the same directory as the image from your camera.
 4. Change the filename on line 17 of `homographyCalibration.py` to match the name of the image from your camera.
 5. Run the program (`python3 homographyCalibration.py`). If errors appear about missing packages, install them with pip (`pip3 install [packagename]`).
-6. Press "c" on one of the image windows to have it automatically select all of the chessboard vertices. You can also manually do this by clicking a corresponding location on each image and pressing "s" for each pair.
-7. The point dots are colored. Make the locations of the colored dots match between the two images by pressing "r" to rotate them and "f" to flip them.
-8. Press "h" to calculate the homography matrix.
+6. Press `c` on one of the image windows to have it automatically select all of the chessboard vertices. You can also manually do this by clicking a corresponding location on each image and pressing `s` for each pair.
+7. The point dots are colored. Make the locations of the colored dots match between the two images by pressing `r` to rotate them and `f` to flip them.
+8. Press `h` to calculate the homography matrix.
 9. Copy it out of the terminal/shell output.
 
 If you want to test the matrix, you can copy the Python syntax for the matrix into `homographyCalibration.py` (line 6) and the image filename (line 13). Run that program, and test the matrix by clicking on a point on the chessboard on the snapshot. A dot at the corresponding location on the reference image should appear.
 
-## Applying the matrix
+## Applying the Matrix
 You need to have a pipeline from which you can extract result coordinates. This sample code uses results from a Limelight pipeline, but you can adapt it to fit others.
 
 1. Copy `BasicHomographySample.java` into your `teamcode` folder.
@@ -39,4 +39,6 @@ You need to have a pipeline from which you can extract result coordinates. This 
 3. Upload and run it. Detected results should be printed in Telemetry.
 4. The printed coordinates of detected objects will likely be offset. We calibrate the offsets (`HORIZONTAL_OFFSET` and `VERTICAL_OFFSET`) by placing a detected object at a known position, for instance, 24 inches in front of the center of the robot, equivalent to the coordinate (0, 24). Modify the offsets to make the printed coordinate match the expected coordinate.
 
-FIRST Tech Challenge Team 6165 MSET Cuttlefish
+---
+
+*FIRST Tech Challenge Team 6165 MSET Cuttlefish*

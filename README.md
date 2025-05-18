@@ -29,7 +29,7 @@ If you cannot attain a chessboard with 1 in × 1 in tiles, you will just have to
 8. Press `h` to calculate the homography matrix. A transformed image will appear.
 9. Copy the calculated matrix out of the terminal/shell output.
 
-![Example](https://github.com/6165-MSET-CuttleFish/Homography/blob/main/ExampleImages/combined.png)
+![Example](ExampleImages/combined.png)
 (Snapshot -> Reference Chessboard -> Resulting Transformed Snapshot)
 
 If you want to test the matrix, you can copy the Python syntax for the matrix into `homographyCalibration.py` (line 6) and the image filename (line 13). Run that program, and test the matrix by clicking on a point on the chessboard on the snapshot. A dot at the corresponding location on the reference image should appear.

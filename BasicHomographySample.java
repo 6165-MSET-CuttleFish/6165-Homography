@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.opencv.core.Point;
 
 
-@TeleOp(name = "Concept: AprilTag", group="Linear OpMode")
+@TeleOp(name = "BasicHomographySample", group="Linear OpMode")
 public class BasicHomographySample extends LinearOpMode{
 
     // Offset constants, inches

@@ -1,6 +1,7 @@
 # Homography
 
 ## What is homography?
+
 Homography, put simply, is "some math to warp an image."
 
 In our case, we want to take an image from our camera and warp it onto the plane of the field so we can extract coordinates of objects in the real world. This allows us to take pixel coordinates on the image and convert them into real-world coordinates.
@@ -8,11 +9,14 @@ In our case, we want to take an image from our camera and warp it onto the plane
 More info on how homography works here: [OpenCV Docs](https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html)
 
 ## Our process
+
 There are really only two main steps:
+
 1. Calculate the homography matrix.
 2. Apply the matrix in real-time to calculate locations of objects.
 
 ## Calculating the Homography Matrix
+
 To calibrate/calculate your homography matrix, you need to make sure the camera is mounted on your robot in a way that it will not move around or shift at all, and you need a way to capture images.
 
 You also need a chessboard, ideally one that is solid (flat, no creases, rigid) and with tiles 1 inch × 1 inch. You can print out our `referenceChessboard.png` image on paper and maybe tape/glue it to cardboard, or 3D print our `printedChessboard.3mf` file. We chose to 3D print ours.
@@ -29,12 +33,12 @@ If you cannot attain a chessboard with 1 in × 1 in tiles, you will just have to
 8. Press `h` to calculate the homography matrix. A transformed image will appear.
 9. Copy the calculated matrix out of the terminal/shell output.
 
-![Example](ExampleImages/combined.png)
-(Snapshot -> Reference Chessboard -> Resulting Transformed Snapshot)
+![Example](ExampleImageshessboard → Resulting Transformed Snapshot)
 
-If you want to test the matrix, you can copy the Python syntax for the matrix into `homographyCalibration.py` (line 6) and the image filename (line 13). Run that program, and test the matrix by clicking on a point on the chessboard on the snapshot. A dot at the corresponding location on the reference image should appear.
+If you want to test the matrix, you can copy the Python syntax for the matrix into `homographyTest.py` (line 6) and the image filename (line 13). Run that program, and test the matrix by clicking on a point on the chessboard on the snapshot. A dot at the corresponding location on the reference image should appear.
 
 ## Applying the Matrix
+
 You need to have a pipeline from which you can extract result coordinates. This sample code uses results from a Limelight pipeline, but you can adapt it to fit others.
 
 1. Copy `BasicHomographySample.java` into your `teamcode` folder.
@@ -44,4 +48,4 @@ You need to have a pipeline from which you can extract result coordinates. This 
 
 ---
 
-*FIRST Tech Challenge Team 6165 MSET Cuttlefish*
+_FIRST Tech Challenge Team 6165 MSET Cuttlefish_

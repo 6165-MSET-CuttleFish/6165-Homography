@@ -26,8 +26,8 @@ If you cannot attain a chessboard with 1 in × 1 in tiles, you will just have to
 5. Run the program (`python3 homographyCalibration.py`). If errors appear about missing packages, install them with pip (`pip3 install [packagename]`).
 6. Press `c` on one of the image windows to have it automatically select all of the chessboard vertices. You can also manually do this by clicking a corresponding location on each image and pressing `s` for each pair.
 7. The point dots are colored. Make the locations of the colored dots match between the two images by pressing `r` to rotate them and `f` to flip them.
-8. Press `h` to calculate the homography matrix.
-9. Copy it out of the terminal/shell output.
+8. Press `h` to calculate the homography matrix. A transformed image will appear.
+9. Copy the calculated matrix out of the terminal/shell output.
 
 If you want to test the matrix, you can copy the Python syntax for the matrix into `homographyCalibration.py` (line 6) and the image filename (line 13). Run that program, and test the matrix by clicking on a point on the chessboard on the snapshot. A dot at the corresponding location on the reference image should appear.
 

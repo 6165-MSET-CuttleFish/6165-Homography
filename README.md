@@ -5,7 +5,7 @@ Homography, put simply, is "some math to warp an image."
 
 In our case, we want to take an image from our camera and warp it onto the plane of the field so we can extract coordinates of objects in the real world. This allows us to take pixel coordinates on the image and convert them into real-world coordinates.
 
-More info on how homography works here: https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
+More info on how homography works here: [OpenCV Docs](https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html)
 
 ## Our process
 There are really only two main steps:
@@ -28,6 +28,9 @@ If you cannot attain a chessboard with 1 in × 1 in tiles, you will just have to
 7. The point dots are colored. Make the locations of the colored dots match between the two images by pressing `r` to rotate them and `f` to flip them.
 8. Press `h` to calculate the homography matrix. A transformed image will appear.
 9. Copy the calculated matrix out of the terminal/shell output.
+
+![Example](https://github.com/6165-MSET-CuttleFish/Homography/blob/main/ExampleImages/combined.png)
+(Snapshot -> Reference Chessboard -> Resulting Transformed Snapshot)
 
 If you want to test the matrix, you can copy the Python syntax for the matrix into `homographyCalibration.py` (line 6) and the image filename (line 13). Run that program, and test the matrix by clicking on a point on the chessboard on the snapshot. A dot at the corresponding location on the reference image should appear.
 

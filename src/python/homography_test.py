@@ -10,7 +10,7 @@ H = np.array([
 
 # Load images
 src = cv.imread('snapshot.png', -1)
-dst = cv.imread('referenceChessboard.png', -1)    
+dst = cv.imread('reference_chessboard.png', -1)    
 
 # Pixels Per Inch constant for coordinate conversion
 PPI = 96.0

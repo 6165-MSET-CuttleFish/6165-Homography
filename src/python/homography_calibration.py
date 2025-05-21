@@ -17,7 +17,7 @@ chessboard = [7, 7]
 
 # Load images
 src = cv.imread('snapshot.png', -1)
-dst = cv.imread('referenceChessboard.png', -1)
+dst = cv.imread('reference_chessboard.png', -1)
 
 
 def select_points_src(event, x, y, flags, param):

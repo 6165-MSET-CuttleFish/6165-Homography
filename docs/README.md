@@ -17,6 +17,9 @@ There are really only two main steps:
 
 ## Calculating the Homography Matrix
 
+![Example](../images/reference/combined.png)
+(Snapshot -> Reference Chessboard -> Resulting Transformed Snapshot)
+
 To calibrate/calculate your homography matrix, you need to make sure the camera is mounted on your robot in a way that it will not move around or shift at all, and you need a way to capture images.
 
 You also need a chessboard, ideally one that is solid (flat, no creases, rigid) and with tiles 1 inch × 1 inch. You can print out our [`reference_chessboard.png`](../images/reference/reference_chessboard.png) image on paper and maybe tape/glue it to cardboard, or 3D print our [`printed_chessboard.3mf`](../models/printed_chessboard.3mf) file. We chose to 3D print ours.
@@ -32,9 +35,6 @@ If you cannot attain a chessboard with 1 inch × 1 inch tiles, you will just hav
 7. The point dots are colored. Make the locations of the colored dots match between the two images by pressing `r` to rotate them and `f` to flip them.
 8. Press `h` to calculate the homography matrix. A transformed image will appear.
 9. Copy the calculated matrix out of the terminal/shell output.
-
-![Example](../images/reference/combined.png)
-(Snapshot -> Reference Chessboard -> Resulting Transformed Snapshot)
 
 If you want to test the matrix, you can copy the Python syntax for the matrix into [`homography_test.py`](../src/python/homography_test.py) (line 5) and the image filename (line 12). Run that program, and test the matrix by clicking on a point on the chessboard on the snapshot. A dot at the corresponding location on the reference image should appear.
 

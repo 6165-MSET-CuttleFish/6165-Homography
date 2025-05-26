@@ -102,8 +102,8 @@ public class BasicHomographySample extends LinearOpMode {
      */
     private Point calculateRobotCoordinates(LLResultTypes.DetectorResult result) {
         // Get pixel coordinates
-        double x = result.getTargetXDegrees();
-        double y = result.getTargetYDegrees();
+        double x = result.getTargetXPixels();
+        double y = result.getTargetYPixels();
 
         // Apply homography transformation
         double X_prime = H[0][0] * x + H[0][1] * y + H[0][2];

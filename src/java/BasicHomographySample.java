@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.robotcontroller.internal;
+package org.firstinspires.ftc.teamcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,14 @@ public class BasicHomographySample extends LinearOpMode {
     // Offset constants in inches
     public static double HORIZONTAL_OFFSET = 0;
     public static double VERTICAL_OFFSET = 24;
+
+    // Camera resolution constants
+    public static double CAMERA_WIDTH = 640.0;
+    public static double CAMERA_HEIGHT = 480.0;
+
+    // Camera field of view constants in degrees
+    public static double HORIZONTAL_FOV = 54.5;
+    public static double VERTICAL_FOV = 42.0;
 
     // Homography transformation matrix
     private final double[][] H = {
@@ -101,9 +109,13 @@ public class BasicHomographySample extends LinearOpMode {
      * @return Robot-relative coordinates of the detected object
      */
     private Point calculateRobotCoordinates(LLResultTypes.DetectorResult result) {
-        // Get pixel coordinates
-        double x = result.getTargetXPixels();
-        double y = result.getTargetYPixels();
+        // Get angular coordinates
+        double x_degrees = result.getTargetXDegrees();
+        double y_degrees = result.getTargetYDegrees();
+
+        // Convert to pixel coordinates using configurable resolution and FOV
+        double x = (x_degrees / HORIZONTAL_FOV) * CAMERA_WIDTH + (CAMERA_WIDTH / 2.0);
+        double y = (y_degrees / VERTICAL_FOV) * CAMERA_HEIGHT + (CAMERA_HEIGHT / 2.0);
 
         // Apply homography transformation
         double X_prime = H[0][0] * x + H[0][1] * y + H[0][2];

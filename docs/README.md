@@ -43,9 +43,10 @@ If you want to test the matrix, you can copy the Python syntax for the matrix in
 You need to have a pipeline from which you can extract result coordinates. This sample code uses results from a Limelight pipeline, but you can adapt it to fit others.
 
 1. Copy [BasicHomographySample.java](../src/java/BasicHomographySample.java) into your `teamcode` folder.
-2. Copy the Java syntax for the matrix into the [BasicHomographySample.java](../src/java/BasicHomographySample.java) on line 25. Change the active pipeline (line 55) if necessary.
-3. Upload and run it. Detected results should be printed in Telemetry.
-4. The printed coordinates of detected objects will likely be offset. We calibrate the offsets (`HORIZONTAL_OFFSET` and `VERTICAL_OFFSET`) by placing a detected object at a known position, for instance, 24 inches in front of the center of the robot, equivalent to the coordinate (0, 24). Modify the offsets to make the printed coordinate match the expected coordinate.
+2. Replace `CAMERA_WIDTH` and `CAMERA_HEIGHT` with your camera's resolution, and `HORIZONTAL_FOV` and `VERTICAL_FOV` with your camera's field of view.
+3. Copy the Java syntax for the matrix into the [BasicHomographySample.java](../src/java/BasicHomographySample.java) on line 33. Change the active pipeline (line 63) if necessary.
+4. Upload and run it. Detected results should be printed in Telemetry.
+5. The printed coordinates of detected objects will likely be offset. We calibrate the offsets (`HORIZONTAL_OFFSET` and `VERTICAL_OFFSET`) by placing a detected object at a known position, for instance, 24 inches in front of the center of the robot, equivalent to the coordinate (0, 24). Modify the offsets to make the printed coordinate match the expected coordinate.
 
 ---
 
